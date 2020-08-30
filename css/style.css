@@ -1,0 +1,80 @@
+body{
+margin: 0px;
+    padding: 0px;
+}
+table { /*Скрипт относительно таблицы*/
+
+    border-collapse:collapse; /*Убираем двойные линии между ячейками таблицы*/
+    background-color:white; /*Задает#ffcc33 таблице фоновое изображение, если при заданном фоне для всей таблицы, задать фон для ряда или ячейки, тогда этот ряд или ячейка будут иметь фон отличный от всей таблицы*/
+    border-width:3px; /*Толщина рамки таблицы в пикселях*/
+    border-style:solid; /*Рамка таблицы сплошная*/
+    border-color:#000000; /*Цвет рамки таблицы*/
+}
+td { /*Скрипт относительно ячейки таблицы*/
+    border:1px solid black; /*Рамка у ячейки таблицы сплошная*/
+    text-align: center;
+    font-size: 18px;
+}
+
+button{
+    width: 100px;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.header{
+    position: relative;
+    font-family: sans-serif;
+    font-size: 35px;
+    text-align: left;
+    color: black;
+    text-align: center;
+
+
+}
+
+
+#show {
+    position: relative;
+    top:0px;
+    left: 0px;
+    width:1100px;
+    height:800px;
+    overflow:scroll;
+    margin: 5px 0px 0px 0px;
+    background-color:white;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 1px black;
+
+
+
+
+.tel_tex {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    font-family: sans-serif;
+    font-size: 100px;
+    text-align: center;
+    color: yellow;
+    -webkit-text-stroke: 3px black;
+    -webkit-text-fill-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
