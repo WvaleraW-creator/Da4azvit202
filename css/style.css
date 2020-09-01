@@ -9,7 +9,7 @@ table { /*Скрипт относительно таблицы*/
     border-width:3px; /*Толщина рамки таблицы в пикселях*/
     border-style:solid; /*Рамка таблицы сплошная*/
     border-color:#000000; /*Цвет рамки таблицы*/
-    width: 900px;
+    width: 100%;
 }
 td { /*Скрипт относительно ячейки таблицы*/
     border:1px solid black; /*Рамка у ячейки таблицы сплошная*/
@@ -48,7 +48,7 @@ position: center;
     position: relative;
     top:0px;
     left: 0px;
-    width:1080px;
+    width:100%;
     height:900px;
     overflow:scroll;
     margin: 5px 0px 0px 0px;
