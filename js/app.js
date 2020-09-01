@@ -270,6 +270,20 @@ if (piople_pay[a][b]!="") { count_number=count_number+Number(piople_pay[a][b])}
     state_bufer=count_number
     show_state(state_bufer)
 }
+
+function List_2019()
+{
+    state_bufer = ''
+    state_bufer = state_bufer +'<h1>Должники 2019 год<h1>'
+    state_bufer = state_bufer + '<table>'
+    state_bufer = state_bufer + '<tr>'+'<td>'+'Номер дачи'+'</td>'+'<td>'+'Фамилия'+'</td>'+'<td>'+'Уголь'+'</td>'+'<td>'+'Уплочено по Месяц'+'</td>'+'</tr>'
+    state_bufer = state_bufer + '<tr>'+'<td>'+'2217'+'</td>'+'<td>'+'Мирошников'+'</td>'+'<td>'+'0'+'</td>'+'<td>'+'8'+'</td>'+'</tr>'
+    state_bufer = state_bufer + '<tr>'+'<td>'+'2231'+'</td>'+'<td>'+'Лукьянченко'+'</td>'+'<td>'+'0'+'</td>'+'<td>'+'3'+'</td>'+'</tr>'
+    state_bufer = state_bufer + '<tr>'+'<td>'+'2234'+'</td>'+'<td>'+'Неизвестно'+'</td>'+'<td>'+'0'+'</td>'+'<td>'+'Не уплочено с 2014 года'+'</td>'+'</tr>'
+
+    show_state(state_bufer)
+    state_bufer = ''
+}
 Pay_all()
 
 
