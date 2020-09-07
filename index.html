@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="media/media.css">
+
     <title>РАСЧЕТНАЯ ВЕДОМОСТЬ СТ "Отдых"</title>
 
 </head>
@@ -17,7 +17,13 @@
     </div>
 </div>
 <div class="header_button">
+    <select id="select">
+        <option value="2020" selected="selected">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+    </select>
     <button  id="1" onclick='Pay_all()'>ОПЛАТЫ</button>
+
     <button  id="2" onclick='Running_cost()'>РАСХОДЫ</button>
     <button  id="3" onclick=>ВЗНОСЫ</button>
     <button  id="4" onclick='List_piple()'>СПИСОК</button>
@@ -25,6 +31,7 @@
     <button  id="5" onclick='List_2019()'>Должники 2019 год</button>
 </div>
 <div id="show"></div>
+
 <script src="js/app.js"></script>
 
 <futer class="fut_info">
