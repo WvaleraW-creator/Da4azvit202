@@ -23,12 +23,17 @@
         <option value="2022">2022</option>
     </select>
     <button  id="1" onclick='Pay_all()'>ОПЛАТЫ</button>
-
     <button  id="2" onclick='Running_cost()'>РАСХОДЫ</button>
     <button  id="3" onclick=>ВЗНОСЫ</button>
     <button  id="4" onclick='List_piple()'>СПИСОК</button>
-    <button  id="5" onclick='List_report()'>ОТЧЕТ</button>
-    <button  id="5" onclick='List_2019()'>Должники 2019 год</button>
+    <select id="select_report">
+        <option value="1" selected="selected">Уголь</option>
+        <option value="2">Должники</option>
+        <option value="3">Общий</option>
+    </select>
+
+    <button  id="5" onclick='count_bedtor()'>ОТЧЕТ</button>
+    <button  id="6" onclick='List_2019()'>Должники 2019 год</button>
 </div>
 <div id="show"></div>
 
