@@ -278,7 +278,7 @@ let pay_for_month = [
     ['Зарплата сторож', 2000, 'Строй материалы ', 1440, '', 0, '', 0, '', 0],
     ['Зарплата сторож', 2000, 'Строй материалы ', 520, 'Задолжность охранна', 1000, 'Задолжность за ремон охране', 1000, 'Уголь +доставка', 3030],
     ['Зарплата сторож ', 2000, 'Зарплата кассир за 2.5 месяца', 500, 'Строй материалы ', 360, 'Заправка Газ 84л', 1008, '', 0],
-    ['Зарплата сторож', 1000, 'Шкаф в сторожку', 300, '', 0, '', 0, '', 0],
+    ['Зарплата сторож', 1500, 'Шкаф в сторожку', 300, 'Часть на дрова и на бензин+масло', 1400, '', 0, '', 0],
     ['Зарплата', 0, '', 0, '', 0, '', 0, '', 0],
     ['Зарплата', 0, '', 0, '', 0, '', 0, '', 0],
     ['Зарплата', 0, '', 0, '', 0, '', 0, '', 0],
@@ -566,7 +566,7 @@ function bedtor_coal(year) {
     let zerro_array = []
     state_bufer=''
     count_year = Number(select.value)//считуем выбор года пользователя
-    if (count_year !=now_year) {state_bufer='Выбраный год'+count_year+'оплат не было';show_state(state_bufer)} else {
+    if (count_year !=now_year) {state_bufer='<h1>Выбраный год '+count_year+' оплат не было </h1>';show_state(state_bufer)} else {
 
         state_bufer = 'Задолжали по оплате за уголь   ' + count_year + '  год '
         zerro_array=[
@@ -575,6 +575,7 @@ function bedtor_coal(year) {
         ]
 
         array_buf=select_count_year(count_year)
+
         for(a=0;a<=array_buf.length-1;a++)
         {
             let buf_string_array=[]
@@ -585,6 +586,7 @@ function bedtor_coal(year) {
         }
 
         show_buf_table(zerro_array,state_bufer)
+
         state_bufer=''
         array_buf=[]
     }
@@ -593,11 +595,54 @@ function bedtor_coal(year) {
 
 
 }//Отчет по углю
+function debtor_pay() {
+    let zerro_array = []
+    let buf_string_array=[]
+    array_buf=[]
+    let count=0
+    count_year = Number(select.value)//считуем выбор года пользователя
+state_bufer=''
+    if (count_year>now_year) {
+    state_bufer='<h1>Вы выбрали  '+count_year+' год в тикущем году нет должников  </h1>'
+        show_state(state_bufer)
+} else {
+        zerro_array=[
+           ['Номер','Владелец дачи','Задолжность месяцев'],
+           ]
+        array_buf=select_count_year(count_year)
+
+        for(a=0;a<=array_buf.length-1;a++)
+        {
+
+            for (b=2;b<=array_buf[a].length-1 && b!=now_month+2;b++) {
+                if (array_buf[a][b] == '') {
+                    count=count+1
+                }
+
+            }
+            if (count>0) {
+                buf_string_array = piople_id(a)
+                buf_string_array.push(count)
+                zerro_array.push([buf_string_array[0], buf_string_array[1], buf_string_array[2]])
+            count=0
+            }
+
+        }
+        state_bufer='<h1>Вы выбрали  '+count_year+' год.  месяц '+year_month[now_month-1]+'</h1>'
+        show_buf_table(zerro_array,state_bufer)
+
+    }
+
+}
+
+
 
 function count_bedtor() {
 
-    if (select_report.value=="1"){bedtor_coal()}
-}
+    if (select_report.value=="1"){bedtor_coal()}//уголь
+    if (select_report.value=='2'){ debtor_pay()}//должники
+    if (select_report.value=='3'){debugger}//общий
+} //селектор отчетов
 
 
 
