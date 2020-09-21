@@ -633,15 +633,84 @@ state_bufer=''
 
     }
 
-}
+}//отчет по должникам
+function report() {
+    let count=0
+    count=sum_cells_choice(piople_pay,1,0)
+    count=count+sum_cells_choice(piople_pay21,1,0)
+    count=count+sum_cells_choice(piople_pay22,1,0)
 
+    let count_zero=0
+    for (a = 0; a < pay_for_month.length-1; a++) {
+        for (b = 1; b <= 10; b=b+2) {
+
+            if (pay_for_month[a][b]!=0) { count_zero=count_zero+Number(pay_for_month[a][b])}
+        }
+    }
+
+
+
+
+
+
+
+    state_bufer='<h2>Оплата за все года '+count+' грн. </h2>'
+    state_bufer+='<h2> Расходы за текущий год'+count_zero+' грн. </h2>'
+    state_bufer+='<h2> Остаток суммы после ревизии '+17345+'грн. </h2>'
+    count=count+17345
+
+    count=count-count_zero
+    state_bufer+='<h2> Остаток '+count+' грн. </h2>'
+    count=Math.round(count/3200)
+    state_bufer+='<h2> Денег хватит на '+count+' месяцев при расходе 3200 грн. </h2>'
+    state_bufer+= '<div id="piechart_3d" style="width: 900px; height: 500px;"></div>'
+    show_state(state_bufer)
+
+
+    type="text/javascript"
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        let data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Сумма оплат за все года',     41460],
+            ['Расходы за текущий год',      33013],
+            ['Остаток суммы после ревизии',  17345],
+            ['Остаток',25792]
+
+        ]);
+
+        let options = {
+            title: 'График ',
+            is3D: true,
+        };
+
+        let chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+    }
+
+
+
+
+}
+function Contributions() {
+
+    state_bufer=[]
+    state_bufer+='<h1> Остаток суммы после ревизии '+17345+'грн. </h1>'
+
+
+    show_state(state_bufer)
+
+state_bufer=[]
+
+}
 
 
 function count_bedtor() {
 
     if (select_report.value=="1"){bedtor_coal()}//уголь
     if (select_report.value=='2'){ debtor_pay()}//должники
-    if (select_report.value=='3'){debugger}//общий
+    if (select_report.value=='3'){report()}//общий
 } //селектор отчетов
 
 
