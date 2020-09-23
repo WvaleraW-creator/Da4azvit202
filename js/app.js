@@ -715,3 +715,11 @@ function count_bedtor() {
 
 
 
+function login() {
+
+   let a= document.getElementById('login').value;
+let b= document.getElementById('password').value;
+   if (a=='1234' && b=='1234'){
+       document.getElementById('modal').style.display = 'none';
+   }
+}
