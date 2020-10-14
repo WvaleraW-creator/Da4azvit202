@@ -733,5 +733,13 @@ function login() {
 let b= document.getElementById('password').value;
    if (a=='1234' && b=='1234'){
        document.getElementById('modal').style.display = 'none';
+       document.getElementById('2').disabled = true;
+       document.getElementById('3').disabled = true;
+       document.getElementById('4').disabled = true;
    }
+    if (a=='1234' && b=='123456'){
+        document.getElementById('modal').style.display = 'none';
+
+    }
+
 }
