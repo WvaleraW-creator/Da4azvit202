@@ -634,7 +634,7 @@ function debtor_pay() {
             }
 
         }
-console.log(count_sum)
+
     debugger
 
 zerro_array.push([buf_string_array[0]='-', buf_string_array[1]='-', buf_string_array[2]='Всего :',buf_string_array[2]=count_sum])
@@ -729,6 +729,8 @@ function count_bedtor() {
 
 function login() {
 
+
+
    let a= document.getElementById('login').value;
 let b= document.getElementById('password').value;
    if (a=='1234' && b=='1234'){
@@ -743,3 +745,5 @@ let b= document.getElementById('password').value;
     }
 
 }
+
+
