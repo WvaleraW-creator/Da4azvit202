@@ -137,6 +137,10 @@ img { width: 150px;
 
 
 .input_id{
+
+    outline: 0;
+    outline-offset: 0;
+    border-radius: 30px;
     width: 280px;
     display: flex;
     justify-content: center;
