@@ -137,7 +137,7 @@ img { width: 150px;
 
 
 .input_id{
-    width: 250px;
+    width: 300px;
     display: flex;
     justify-content: center;
     margin: 17px;
@@ -145,7 +145,7 @@ img { width: 150px;
     top: 198px;
     font-size: 25px;
     text-align: center;
-    width: auto;
+
 
 
 
