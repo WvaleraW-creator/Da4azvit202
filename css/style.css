@@ -159,12 +159,13 @@ img { width: 150px;
 .button_login{
     position: relative;
     text-align: center;
-    top:225px;
+    top:216px;
     margin: 10px 0px 0px 10px;
 }
 .bot_login{
     font-size: 20px;
     width: 180px;
+    height: 42px;
     border: 0px;
     border-radius: 30px;
 
